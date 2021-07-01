@@ -11,7 +11,7 @@
  
   --color-secondary:#324376;
   --color-secondary-hightlight:#586ba4;
-  --color-primary-hightligt:#f2f4f9;
+  --color-primary-hightligt:#f68e5f;
   --color-font-base: #071f47;
   --color-font-highlight: #547aa5;
   --color-font-inverted: #f5f5f5;
@@ -136,6 +136,9 @@ section {
   overflow: hidden;
   padding: 50px 30px;
 }
+.section.not-bottom {
+  padding-bottom: 0;
+}
 .container{
   display: flex;
   align-items: center;
@@ -209,13 +212,54 @@ section {
   color: var(--color-font-inverted);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+}
+label {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+}
+input {
+  padding: 10px 20px;
+  border: 2px solid var(--color-primary);
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+}
+input:focus {
+  border: 2px solid var(--color-primary-highlight);
+  box-shadow: 3px 3px 5px 5px rgba(246, 142, 95, 0.2);
+  outline: none;
+}
 
 .title{
   font-size: var(--font-size-xl);
   margin-bottom: 20px;
   text-align: left;
   
-}.subtitle {
+}
+textarea {
+  resize: vertical;
+  border: 2px solid var(--color-primary);
+  height: 100px;
+  padding: 20px;
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+  font-family: Karla, "sans-serif";
+}
+textarea:focus {
+  border: 2px solid var(--color-primary-highlight);
+  box-shadow: 3px 3px 5px 5px rgba(246, 142, 95, 0.2);
+  outline: none;
+}
+.title.is-left {
+  text-align: left;
+  width: 100%;
+}
+.subtitle {
   font-size: var(--font-size-md);
 }
 .biography-title{
@@ -232,6 +276,20 @@ section {
 .expertise-item{
   margin-bottom: 2opx;
 }
+.contact{
+  background: var(--color-primary-hightligt);
+}
+.contact-container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.form-container {
+  background: var(--background-primary);
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+}
 .title span{
   color: var(--color-primary);
 }
@@ -240,6 +298,21 @@ section {
   margin-top: 20px;
   font-size: 40px;
   font-size: var(--font-size-lg);
+}
+
+.social a {
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+}
+
+.social a img {
+  margin-right: 10px;
+}
+.main-footer{
+  padding: 1px 10px;
+  background: var(--color-primary);
+  text-align: center;
 }
 p.is-inverted,
 .title.is-inverted {
@@ -262,6 +335,9 @@ button{
   max-width: 300px;
   width: 100%;
   
+}
+button.is-block{
+  max-width: 100%;
 }
 @media (max-width:914px){
   :root {
@@ -286,6 +362,9 @@ button{
   }
   .card p {
     font-size: var(--font-size-xs);
+  }
+  .contact-container{
+    flex-direction: column;
   }
 }
 .hero-content{
